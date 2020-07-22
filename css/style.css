@@ -36,7 +36,7 @@ html {
 }
 img {
   max-width: 100%;
-  height: auto;
+  height: 90%;
 }
 @font-face {
   font-family: "MuseoSansCyrl_reg";
