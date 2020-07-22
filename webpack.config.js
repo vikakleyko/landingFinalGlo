@@ -1,0 +1,26 @@
+/* eslint-disable no-undef */
+const path = require("path");
+
+module.exports = {
+    entry: {
+        main: "./src/index.js"
+    },
+    output: {
+        path: path.resolve(__dirname, "./dist"),
+        filename: "[name].js",
+        publicPath: "/dist"
+    },
+    devServer: {
+        overlay: true,
+        disableHostCheck: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loader: "babel-loader",
+                exclude: "/node_modules/"
+            }
+        ]
+    }
+};
