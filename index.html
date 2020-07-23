@@ -108,7 +108,7 @@
                  data-wow-delay="0.2s">
                 <form class="capture-form text-center">
                     <label for="name_2">Как к вам обращаться</label>
-                    <input type="text" id="name_2" name="user_name" placeholder="Ваше имя" required>
+                    <input type="text" id="name_2" class="user-name" name="user_name" placeholder="Ваше имя" required>
                     <label for="phone_2">Ваш телефон для получения скидки</label>
                     <input class="phone-user" type="text" id="phone_2" name="user_phone" placeholder="+7(___)___-__-__"
                            required>
@@ -134,7 +134,7 @@
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                   aria-expanded="true" aria-controls="collapseOne" onclick="return false;">
+                                   aria-expanded="true" aria-controls="collapseOne" onclick="event.preventDefault();">
                                     <span class="link-text">1. Тип септика</span>
                                 </a>
                             </h4>
@@ -154,7 +154,7 @@
                                 <img class="type-septic" src="img/constructor/type-septic-two.png" alt="septic">
                                 <p>камерный</p>
                                 <a class="button construct-btn collapsed" data-toggle="collapse"
-                                   data-parent="#accordion" href="#collapseTwo" onclick="return false;"><span>Следующий шаг</span></a>
+                                   data-parent="#accordion" href="#collapseTwo" onclick="event.preventDefault();"><span>Следующий шаг</span></a>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="return false;">
+                                   href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="event.preventDefault();">
                                     <span class="link-text">2. Диаметр и количество колец</span>
                                 </a>
                             </h4>
@@ -205,7 +205,7 @@
                                         <option>3 штуки</option>
                                     </select>
                                 </div>
-                                <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion" onclick="return false;"
+                                <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion" onclick="event.preventDefault();"
                                    href="#collapseThree"><span>Следующий шаг</span></a>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="return false;">
+                                   href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="event.preventDefault();">
                                     <span class="link-text">3. Наличие днища колодца</span>
                                 </a>
                             </h4>
@@ -235,7 +235,7 @@
                                 </div>
                                 <img class="bottom-septic-img" src="img/constructor/bottom-septic.png" alt="bs">
                                 <a class="button construct-btn" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick="return false;">
+                                   href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick="event.preventDefault();">
                                    <span>Следующий шаг</span></a>
                             </div>
                         </div>
@@ -245,7 +245,7 @@
                         <div class="panel-heading" role="tab" id="headingFour">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick="return false;">
+                                   href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick="event.preventDefault();">
                                     <span class="link-text">4. Расстояние от септика до дома</span>
                                 </a>
                             </h4>
@@ -441,7 +441,7 @@
                 <p class="question">Остались вопросы?</p>
                 <p>Введите свой вопрос и в течении 15 минут я свяжусь с вами!</p>
                 <form class="director-form">
-                    <input type="text" name="user_quest" placeholder="Введите свой вопрос" required>
+                    <input type="text" name="user_quest" class="user_quest" placeholder="Введите свой вопрос" required>
                     <button class="button director-btn consultation-btn" name="submit" type="submit">Получить
                         консультацию
                     </button>
@@ -488,7 +488,7 @@
             <form class="capture-form text-center">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_1">Как к вам обращаться</label>
-                <input type="text" id="name_1" name="user_name" placeholder="Ваше имя" required>
+                <input type="text" id="name_1" class="user-name" name="user_name" placeholder="Ваше имя" required>
                 <label for="phone_1">Ваш телефон для получения скидки</label>
                 <input class="phone-user" type="text" id="phone_1" name="user_phone" placeholder="+7(___)___-__-__"
                        required>
@@ -509,7 +509,7 @@
             <form class="capture-form text-center">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_11">Как к вам обращаться</label>
-                <input type="text" id="name_11" name="user_name" placeholder="Ваше имя" required>
+                <input type="text" id="name_11" class="user-name" name="user_name" placeholder="Ваше имя" required>
                 <label for="phone_11">Ваш телефон для получения скидки</label>
                 <input class="phone-user" type="text" id="phone_11" name="user_phone" placeholder="+7(___)___-__-__"
                        required>
@@ -530,7 +530,7 @@
             <form class="capture-form text-center">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_12">Как к вам обращаться</label>
-                <input type="text" id="name_12" name="user_name" placeholder="Ваше имя" required>
+                <input type="text" id="name_12" class="user-name" name="user_name" placeholder="Ваше имя" required>
                 <label for="phone_12">Ваш телефон для получения скидки</label>
                 <input class="phone-user" type="text" id="phone_12" name="user_phone" placeholder="+7(___)___-__-__"
                        required>
@@ -551,7 +551,7 @@
             <form class="capture-form text-center">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_13">Как к вам обращаться</label>
-                <input type="text" id="name_13" name="user_name" placeholder="Ваше имя" required>
+                <input type="text" id="name_13" class="user-name" name="user_name" placeholder="Ваше имя" required>
                 <label for="phone_13">Ваш телефон для получения скидки</label>
                 <input class="phone-user" type="text" id="phone_13" name="user_phone" placeholder="+7(___)___-__-__"
                        required>

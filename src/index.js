@@ -13,11 +13,9 @@ import accordion from "./modules/accordion";
 import popupCheckDiscount from "./modules/popupCheckDiscount";
 import calculator from "./modules/calculator";
 import showMore from "./modules/showMore";
-import sendQuestionForm from "./modules/sendQuestionForm";
+import openQuestionForm from "./modules/openQuestionForm";
 
 modalCall();
-
-sendForm();
 
 modalDiscount();
 
@@ -29,7 +27,10 @@ calculator();
 
 showMore();
 
-sendQuestionForm();
+openQuestionForm();
+
+sendForm();
+
 
 
 
