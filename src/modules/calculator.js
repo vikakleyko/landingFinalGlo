@@ -1,9 +1,40 @@
 "use strict";
 
 const calculator = () => {
-  let panel = document.getElementById("accordion"),
+  const panel = document.getElementById("accordion"),
     myonoffswitch = document.getElementById("myonoffswitch"),
-    nextElem;
+    formControl = document.querySelectorAll(".form-control"),
+    selectBoxes = document.querySelectorAll(".select-box"),
+    myonoffswitchTwo = document.getElementById("myonoffswitch-two"),
+    distanceInput = document.getElementById("distance"),
+    resultInput = document.getElementById("calc-result");
+
+  let nextElem = document.querySelector(".in");
+
+  selectBoxes[2].style.display = "none";
+  selectBoxes[3].style.display = "none";
+
+  class Order {
+    constructor(
+      type,
+      diameter1,
+      diameter2,
+      amoutntOfCameras1,
+      amoutntOfCameras2,
+      bottom,
+      distance,
+      result
+    ) {
+      this.type = type;
+      this.diameter1 = diameter1;
+      this.diameter2 = diameter2;
+      this.amoutntOfCameras1 = amoutntOfCameras1;
+      this.amoutntOfCameras2 = amoutntOfCameras2;
+      this.distance = distance;
+      this.result = result;
+      this.bottom = bottom;
+    }
+  }
 
   panel.addEventListener("click", (e) => {
     let target = e.target;
@@ -29,9 +60,100 @@ const calculator = () => {
       block.classList.remove("in");
     });
 
-    nextElem.classList.add("in");
-    const button = nextElem.querySelector(".construct-btn");
-    button.classList.add("collapsed");
+    if (nextElem) {
+      nextElem.classList.add("in");
+      const button = nextElem.querySelector(".construct-btn");
+      button.classList.add("collapsed");
+    }
+  });
+
+  let d1,
+    amount1,
+    d2 = 0,
+    amount2 = 0,
+    type = 1,
+    bottom = true,
+    distance;
+
+  panel.addEventListener("change", (e) => {
+    let target = e.target;
+
+    const countSum = () => {
+      let result = 0;
+
+      if (myonoffswitch.checked) {
+        // one camera
+        selectBoxes[2].style.display = "none";
+        selectBoxes[3].style.display = "none";
+        result = 10000;
+        type = 1;
+        d2 = 0;
+        amount2 = 0;
+      } else {
+        // two cameras
+        selectBoxes[2].style.display = "inline-block";
+        selectBoxes[3].style.display = "inline-block";
+        type = 2;
+        d2 = parseFloat(
+          formControl[2].options[formControl[2].selectedIndex].value
+        );
+        amount2 = parseFloat(
+          formControl[3].options[formControl[3].selectedIndex].value
+        );
+        result = 15000;
+      }
+
+      bottom = myonoffswitchTwo.checked;
+
+      if (bottom) {
+        result += type === 1 ? 1000 : 2000;
+      }
+
+      d1 = parseFloat(
+        formControl[0].options[formControl[0].selectedIndex].value
+      );
+      amount1 = parseFloat(
+        formControl[1].options[formControl[1].selectedIndex].value
+      );
+
+      distance = +distanceInput.value;
+
+      if (d1 === 2) {
+        result *= 1.2;
+      }
+      if (d2 === 2) {
+        result *= 1.2;
+      }
+      if (amount1 === 2) {
+        result *= 1.3;
+      }
+      if (amount2 === 2) {
+        result *= 1.3;
+      }
+      if (amount1 === 3) {
+        result *= 1.5;
+      }
+      if (amount2 === 3) {
+        result *= 1.5;
+      }
+
+      resultInput.value = result;
+
+      const order = new Order(
+        type,
+        d1,
+        d2,
+        amount1,
+        amount2,
+        bottom,
+        distance,
+        result
+      );
+    };
+
+    if (target.matches("input") || target.matches("select")) {
+      countSum();
+    }
   });
 };
 

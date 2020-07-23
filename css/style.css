@@ -1254,4 +1254,8 @@ header .logo img {
   .director p {
     font-size: 1.5rem;
   }
+
+  .panel-collapse{
+    transition: opacity .8s ease-in-out;
+  }
 }
