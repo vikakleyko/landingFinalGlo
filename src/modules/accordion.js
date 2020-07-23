@@ -2,7 +2,6 @@
 
 const accordion = () => {
   const panel = document.getElementById("accordion-two");
-  console.log(panel);
 
   panel.addEventListener("click", (e) => {
     let target = e.target;
