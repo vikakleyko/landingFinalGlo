@@ -181,11 +181,19 @@ const sendForm = () => {
         inputName = body["user_name"];
         inputPhone = body["user_phone"];
 
-        if (question.value) {
-          data = { body, userQuestion: question.value, order };
-        } else {
-          data = { body, order };
+        if (e.target.closest(".popup-call")) {
+          
         }
+
+        if (question.value) {
+          data = { body, userQuestion: question.value };
+        } else 
+        if (e.target.closest(".popup-call")) {
+          data = { body, order };
+        } else {
+          data = { body };
+        }
+
         if (typeof inputName === "undefined") {
           valide = valideNumber(inputPhone);
         } else {
